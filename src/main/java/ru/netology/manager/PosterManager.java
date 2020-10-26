@@ -5,6 +5,25 @@ import ru.netology.domain.MovieItem;
 public class PosterManager {
     private MovieItem[] items = new MovieItem[0];
     private int numberOfMovies = 10;
+
+    public MovieItem[] getItems() {
+        return items;
+    }
+
+    public void setItems(MovieItem[] items) {
+        this.items = items;
+    }
+
+
+    public int getNumberOfMovies() {
+        return numberOfMovies;
+    }
+
+    public void setNumberOfMovies(int numberOfMovies) {
+        this.numberOfMovies = numberOfMovies;
+    }
+
+
     public void add(MovieItem item) {
         // создаём новый массив размером на единицу больше
         int length = items.length + 1;
@@ -31,11 +50,28 @@ public class PosterManager {
         }
         return result;
     }
- public PosterManager() {
-    if (numberOfMovies < 0) {
-        return;
+
+    public MovieItem[] getAmountOfMovies() {
+        MovieItem[] result = new MovieItem[getNumberOfMovies()];
+        MovieItem[] tmp = getAll();
+        if (numberOfMovies > numberOfMovies) {
+            this.numberOfMovies = numberOfMovies;
+        }
+
+        System.arraycopy(tmp, 0, result, 0, numberOfMovies);
+
+        return result;
     }
-    this.numberOfMovies = numberOfMovies;
+
+
+    public PosterManager() {
+    }
+
+    public PosterManager(int numberOfMovies) {
+        if (numberOfMovies < 0) {
+            return;
+        }
+        this.numberOfMovies = numberOfMovies;
     }
 }
 
