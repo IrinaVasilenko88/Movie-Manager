@@ -41,25 +41,11 @@ public class PosterManager {
     }
 
     public MovieItem[] getAll() {
-        MovieItem[] result = new MovieItem[items.length];
-        // перебираем массив в прямом порядке
-        // но кладём в результаты в обратном
+        MovieItem[] result = new MovieItem[Math.min(items.length, numberOfMovies)];
         for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
         }
-        return result;
-    }
-
-    public MovieItem[] getAmountOfMovies() {
-        MovieItem[] result = new MovieItem[getNumberOfMovies()];
-        MovieItem[] tmp = getAll();
-        if (numberOfMovies > numberOfMovies) {
-            this.numberOfMovies = numberOfMovies;
-        }
-
-        System.arraycopy(tmp, 0, result, 0, numberOfMovies);
-
         return result;
     }
 
