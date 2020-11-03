@@ -51,30 +51,17 @@ public class AfishaRepositoryTest {
 
     @Test
     void shouldRemoveById() {
-        AfishaRepository repository = new AfishaRepository();
         int idToRemove = 3;
-        repository.save(first);
-        repository.save(second);
-        repository.save(third);
-        repository.save(fourth);
-        repository.save(fifth);
         repository.removeById(idToRemove);
         MovieItem[]actual = repository.findAll();
-        MovieItem[] expected = new MovieItem[]{first, second, fourth, fifth};
+        MovieItem[] expected = new MovieItem[]{first, second, fourth, fifth, sixth, seventh, ninth, tenth};
         assertArrayEquals(expected, actual);
 
     }
 
     @Test
     void shouldFindById() {
-        AfishaRepository repository = new AfishaRepository();
         int idToFind = 5;
-        repository.save(first);
-        repository.save(second);
-        repository.save(third);
-        repository.save(fourth);
-        repository.save(fifth);
-        repository.save(sixth);
         repository.findById(idToFind);
         MovieItem actual = repository.findById(idToFind);
         MovieItem expected = fifth;
@@ -84,13 +71,7 @@ public class AfishaRepositoryTest {
     @Test
     void shouldFindByIdIfIdDoesNotExist() {
         AfishaRepository repository = new AfishaRepository();
-        int idToFind = 7;
-        repository.save(first);
-        repository.save(second);
-        repository.save(third);
-        repository.save(fourth);
-        repository.save(fifth);
-        repository.save(sixth);
+        int idToFind = 11;
         repository.findById(idToFind);
         MovieItem actual = repository.findById(idToFind);
         MovieItem expected = null;
@@ -100,18 +81,6 @@ public class AfishaRepositoryTest {
 
     @Test
     void shouldRemoveAll() {
-        AfishaRepository repository = new AfishaRepository();
-        repository.save(first);
-        repository.save(second);
-        repository.save(third);
-        repository.save(fourth);
-        repository.save(fifth);
-        repository.save(sixth);
-        repository.save(seventh);
-        repository.save(eighth);
-        repository.save(ninth);
-        repository.save(tenth);
-
         repository.removeAll();
         MovieItem[] actual = repository.findAll();
         MovieItem[] expected = {};
