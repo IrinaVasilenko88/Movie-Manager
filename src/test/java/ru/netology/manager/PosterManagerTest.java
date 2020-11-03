@@ -63,7 +63,6 @@ public class PosterManagerTest {
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{};
         assertArrayEquals(expected, actual);
-
-
     }
+
 }
