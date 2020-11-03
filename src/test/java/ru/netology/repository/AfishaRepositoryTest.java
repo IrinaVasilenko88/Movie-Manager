@@ -54,7 +54,7 @@ public class AfishaRepositoryTest {
         int idToRemove = 3;
         repository.removeById(idToRemove);
         MovieItem[]actual = repository.findAll();
-        MovieItem[] expected = new MovieItem[]{first, second, fourth, fifth, sixth, seventh, ninth, tenth};
+        MovieItem[] expected = new MovieItem[]{first, second, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
         assertArrayEquals(expected, actual);
 
     }
