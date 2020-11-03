@@ -43,16 +43,6 @@ public class PosterManagerTest {
 
     @Test
     public void shouldGetMoviesLessThanTen() {
-        PosterManager manager = new PosterManager();
-        manager.add(first);
-        manager.add(second);
-        manager.add(third);
-        manager.add(fourth);
-        manager.add(fifth);
-        manager.add(sixth);
-        manager.add(seventh);
-        manager.add(eighth);
-        manager.add(ninth);
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
@@ -60,21 +50,20 @@ public class PosterManagerTest {
 
     @Test
     public void shouldGetMoviesMoreThanTen() {
-        PosterManager manager = new PosterManager();
-        manager.add(first);
-        manager.add(second);
-        manager.add(third);
-        manager.add(fourth);
-        manager.add(fifth);
-        manager.add(sixth);
-        manager.add(seventh);
-        manager.add(eighth);
-        manager.add(ninth);
-        manager.add(tenth);
-        manager.add(eleventh);
+        manager.add (tenth);
+        manager.add (eleventh);
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
         assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldNotGetMoviesIfUnderZero () {
+        manager = new PosterManager(-5);
+        MovieItem[] actual = manager.getAll();
+        MovieItem[] expected = new MovieItem[]{};
+        assertArrayEquals(expected, actual);
+
 
     }
 }

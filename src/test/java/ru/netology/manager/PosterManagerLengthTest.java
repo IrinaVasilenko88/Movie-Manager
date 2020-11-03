@@ -17,7 +17,6 @@ public class PosterManagerLengthTest {
 
    @Test
     public void shouldAddFourMovies () {
-    PosterManager manager = new PosterManager(4);
     manager.add(first);
     manager.add(second);
     manager.add(third);
@@ -29,7 +28,6 @@ public class PosterManagerLengthTest {
 
  @Test
     public void shouldAddFiveMovies () {
-     PosterManager manager = new PosterManager(5);
      manager.add(first);
      manager.add(second);
      manager.add(third);
@@ -41,7 +39,6 @@ public class PosterManagerLengthTest {
  }
     @Test
     public void shouldAddSixMovies () {
-        PosterManager manager = new PosterManager(6);
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -49,9 +46,10 @@ public class PosterManagerLengthTest {
         manager.add(fifth);
         manager.add(sixth);
         MovieItem[] actual = manager.getAll();
-        MovieItem[] expected = new MovieItem[] {sixth, fifth, fourth, third, second, first};
+        MovieItem[] expected = new MovieItem[] {sixth, fifth, fourth, third, second};
         assertArrayEquals(expected, actual);
     }
+
 }
 
 
